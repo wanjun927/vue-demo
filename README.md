@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+## src 中的Todo文件包含了TodoList Demo
+
 ## Build Setup
 
 ``` bash
