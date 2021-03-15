@@ -9,6 +9,13 @@ import Vonshow from '@/components/Vonshow/index'
 import Vmodeldemo from '@/components/Vmodeldemo/index'
 import Keepalive from '@/components/Keepalivedemo/index'
 import Todo from '@/components/Todo/index'
+import page from '@/components/Keepalivedemo/page'
+import otherPage from '@/components/Keepalivedemo/otherPage'
+import componentDemo from '@/components/componentDemo/index'
+import Directivesdemo from '@/components/Directivesdemo/index'
+import SlotDemo from '@/components/Slot/index'
+import lifecircle from '@/components/lifecircle/index'
+import myMixin from '@/components/Mixin/index'
 
 Vue.use(Router)
 
@@ -52,12 +59,51 @@ export default new Router({
     {
       path: '/Keepalivedemo/index',
       name: 'Keepalive',
-      component: Keepalive
+      component: Keepalive,
+      children: [
+        {
+          path: 'page',
+          name: 'page',
+          component: page,
+          keepAlive: true
+        },
+        {
+          path: 'otherPage',
+          name: 'otherPage',
+          component: otherPage,
+          keepAlive: false
+        }
+      ]
     },
     {
       path: '/Todo/index',
       name: 'Todo',
       component: Todo
+    },
+    {
+      path: '/componentDemo/index',
+      name: 'componentDemo',
+      component: componentDemo
+    },
+    {
+      path: '/Directivesdemo/index',
+      name: 'Directivesdemo',
+      component: Directivesdemo
+    },
+    {
+      path: '/Slot/index',
+      name: 'SlotDemo',
+      component: SlotDemo
+    },
+    {
+      path: '/lifecircle/index',
+      name: 'lifecircle',
+      component: lifecircle
+    },
+    {
+      path: '/Mixin/index',
+      name: 'myMixin',
+      component: myMixin
     }
   ]
 })
