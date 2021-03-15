@@ -11,6 +11,12 @@ export default {
   mixins: [myMixin],
   created () {
     this.num++
+  },
+  mounted () {
+    console.log(this.func_one(), 'template_func_one')
+    this.func_two().then(res => {
+      console.log(res, 'template_func_two')
+    })
   }
 }
 </script>
