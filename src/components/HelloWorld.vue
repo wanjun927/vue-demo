@@ -69,6 +69,11 @@
           Mixin
         </router-link>
       </li>
+      <li>
+        <router-link :to="{name: 'Vrouter'}">
+          Vrouter
+        </router-link>
+      </li>
     </ul>
     <!-- <Sabout />
     <Shome /> -->
