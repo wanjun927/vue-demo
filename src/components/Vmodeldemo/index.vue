@@ -20,6 +20,11 @@
             </div>
             <span>Picked: {{picked}}</span>
         </div>
+        <div>
+          <h3>v-model的实质</h3>
+          <input type="text" :value="showInfo" @input="changeShowInfo">
+          <p>{{showInfo}}</p>
+        </div>
     </div>
 </template>
 
@@ -29,7 +34,14 @@ export default {
     return {
       message: '',
       checked: false,
-      picked: ''
+      picked: '',
+      showInfo: '111'
+    }
+  },
+  methods: {
+    changeShowInfo (e) {
+      // console.log(e)
+      this.showInfo = e.target.value
     }
   }
 }
