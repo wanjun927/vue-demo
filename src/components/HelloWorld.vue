@@ -77,6 +77,9 @@
       <li>
         <router-link :to="{name: 'useMock'}">Mockjs</router-link>
       </li>
+      <li>
+        <router-link :to="{name: 'vmenu'}">单页面实现多标签</router-link>
+      </li>
     </ol>
     <!-- <Sabout />
     <Shome /> -->

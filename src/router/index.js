@@ -23,6 +23,7 @@ import page3 from '@/components/Vrouter/page3'
 import page4 from '@/components/Vrouter/page4'
 import page5 from '@/components/Vrouter/page5'
 import useMock from '@/components/UseMock/index'
+import Vmenu from '@/components/Vmenu/index'
 
 Vue.use(Router)
 
@@ -156,6 +157,11 @@ const router = new Router({
       path: '/UseMock/index',
       name: 'useMock',
       component: useMock
+    },
+    {
+      path: '/Vmenu/index',
+      name: 'vmenu',
+      component: Vmenu
     }
   ]
 })
