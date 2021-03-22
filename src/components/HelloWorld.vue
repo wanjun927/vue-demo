@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <!-- <Child :propsname="1" @show="showAlert"/> -->
     <!-- <SlotDemo /> -->
-    <ul>
+    <ol>
       <li>
         <router-link :to="{name: 'SlotDemo'}">
           slot插槽
@@ -74,7 +74,10 @@
           Vrouter
         </router-link>
       </li>
-    </ul>
+      <li>
+        <router-link :to="{name: 'useMock'}">Mockjs</router-link>
+      </li>
+    </ol>
     <!-- <Sabout />
     <Shome /> -->
     <router-view></router-view>
@@ -118,9 +121,10 @@ ul {
 }
 li {
   /* display: inline-block; */
-  margin: 0 10px;
+  margin: 10px;
 }
 a {
-  color: #42b983;
+  color: #3d8564;
+  text-decoration: none;
 }
 </style>

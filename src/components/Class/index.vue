@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     changeType: function () {
-      this.loginType === 'username' ? this.loginType = 'e' : this.loginType = 'username'
+      this.loginType === 'username' ? this.loginType = 'email' : this.loginType = 'username'
       return this.loginType
     }
   }

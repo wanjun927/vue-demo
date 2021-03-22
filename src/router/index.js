@@ -19,10 +19,14 @@ import myMixin from '@/components/Mixin/index'
 import Vrouter from '@/components/Vrouter/index'
 import page1 from '@/components/Vrouter/page1'
 import page2 from '@/components/Vrouter/page2'
+import page3 from '@/components/Vrouter/page3'
+import page4 from '@/components/Vrouter/page4'
+import page5 from '@/components/Vrouter/page5'
+import useMock from '@/components/UseMock/index'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -109,21 +113,57 @@ export default new Router({
       component: myMixin
     },
     {
-      path: 'Vrouter/index',
+      path: '/Vrouter/',
       name: 'Vrouter',
       component: Vrouter,
       children: [
         {
-          path: 'Vrouter/page1',
+          path: 'page1',
           name: 'page1',
-          component: page1
+          components: {
+            default: page1,
+            a: page2,
+            b: page3,
+            c: page2
+          }
         },
         {
-          path: 'Vrouter/page2',
+          path: 'page2',
           name: 'page2',
           component: page2
+        },
+        {
+          path: 'page3/:id',
+          name: 'page3',
+          component: page3,
+          props: true
+        },
+        {
+          path: 'page4',
+          name: 'page4',
+          component: page4
+        },
+        {
+          path: 'page5',
+          name: 'page5',
+          component: page5,
+          redirect: {name: page3},
+          alias: '/3'
         }
       ]
+    },
+    {
+      path: '/UseMock/index',
+      name: 'useMock',
+      component: useMock
     }
   ]
 })
+router.beforeEach((to, from, next) => {
+  // console.log(to, from)
+  next()
+})
+router.afterEach((to, from) => {
+  // console.log(to, from)
+})
+export default router
