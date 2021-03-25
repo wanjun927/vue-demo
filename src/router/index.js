@@ -22,8 +22,11 @@ import page2 from '@/components/Vrouter/page2'
 import page3 from '@/components/Vrouter/page3'
 import page4 from '@/components/Vrouter/page4'
 import page5 from '@/components/Vrouter/page5'
+import home from '@/components/Vrouter/home'
 import useMock from '@/components/UseMock/index'
 import Vmenu from '@/components/Vmenu/index'
+import Vmpage1 from '@/components/Vmenu/index/page1'
+import Vmpage2 from '@/components/Vmenu/index/page2'
 
 Vue.use(Router)
 
@@ -119,6 +122,11 @@ const router = new Router({
       component: Vrouter,
       children: [
         {
+          path: '/',
+          name: 'home',
+          component: home
+        },
+        {
           path: 'page1',
           name: 'page1',
           components: {
@@ -147,9 +155,9 @@ const router = new Router({
         {
           path: 'page5',
           name: 'page5',
-          component: page5,
-          redirect: {name: page3},
-          alias: '/3'
+          component: page5
+          // redirect: {name: page3}
+          // alias: '/3'
         }
       ]
     },
@@ -161,7 +169,19 @@ const router = new Router({
     {
       path: '/Vmenu/index',
       name: 'vmenu',
-      component: Vmenu
+      component: Vmenu,
+      children: [
+        {
+          path: 'page1',
+          name: 'Vmpage1',
+          component: Vmpage1
+        },
+        {
+          path: 'page2',
+          name: 'Vmpage2',
+          component: Vmpage2
+        }
+      ]
     }
   ]
 })

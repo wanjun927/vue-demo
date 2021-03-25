@@ -3,7 +3,7 @@
         <h1>router</h1>
         <div>
             <ul>
-                <li>
+                <li @click="addViewTag">
                     <router-link :to="{name: 'page1'}">to page1</router-link>
                 </li>
                 <li>
@@ -13,9 +13,11 @@
                     <router-link :to="{name: 'page3', params: {id : getRandom}}">to page3</router-link>
                 </li>
                 <li>
-                    <router-link to="Vrouter/page4">to page4</router-link>
+                    <!-- <router-link to="Vrouter/page4">to page4</router-link> -->
+                    <router-link :to="{name: 'page4'}">to page4</router-link>
                 </li>
                 <li>
+                    <!-- <router-link to="Vrouter/page4">to page4</router-link> -->
                     <router-link :to="{name: 'page5'}">to page5</router-link>
                 </li>
             </ul>
@@ -37,6 +39,12 @@ export default {
   computed: {
     getRandom () {
       return Math.floor(Math.random() * 10)
+    }
+  },
+  methods: {
+    addViewTag () {
+      console.log('click')
+      this.$store.commit('addTags', this.$route)
     }
   }
 }
